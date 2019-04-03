@@ -30,7 +30,7 @@ while true:
         if path.isAbsolute(): path
         else: getCurrentDir().joinPath(path)
       if fullpath.existsFile() or fullpath.existsDir():
-        non_opts.add(fullpath)
+        non_opts.add(fullpath.normalizedPath())
   else:
     case p.kind
     of cmdShortOption, cmdLongOption:
